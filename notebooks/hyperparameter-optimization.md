@@ -68,7 +68,7 @@ With these two pieces, we are now ready for sequential model-based optimisation.
 from skopt import gp_minimize
 res_gp = gp_minimize(objective, space, n_calls=100, random_state=0)
 
-"Best score=%.4f" % res_gp.fun
+print('Best score: {:.4f}'.format(res_gp.fun))
 ```
 
 
@@ -80,22 +80,21 @@ res_gp = gp_minimize(objective, space, n_calls=100, random_state=0)
 
 
 ```python
-print("""Best parameters:
-- max_depth=%d
-- learning_rate=%.6f
-- max_features=%d
-- min_samples_split=%d
-- min_samples_leaf=%d""" % (res_gp.x[0], res_gp.x[1], 
-                            res_gp.x[2], res_gp.x[3], 
-                            res_gp.x[4]))
+print('''Best parameters:
+    - max_depth = {}
+    - learning_rate = {:.4f}
+    - max_features = {}
+    - min_samples_split = {}
+    - min_samples_leaf = {}'''.format(res_gp.x[0], res_gp.x[1], 
+                                res_gp.x[2], res_gp.x[3], res_gp.x[4]))
 ```
 
-    Best parameters:
-    - max_depth=3
-    - learning_rate=0.130851
-    - max_features=6
-    - min_samples_split=2
-    - min_samples_leaf=1
+Best parameters:
+    - max_depth = 3
+    - learning_rate = 0.1402
+    - max_features = 11
+    - min_samples_split = 38
+    - min_samples_leaf = 1
 
 
 ## Convergence plot
