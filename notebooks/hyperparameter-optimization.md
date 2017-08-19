@@ -28,6 +28,7 @@ The first step is to define the objective function we want to minimize, in this 
 from sklearn.datasets import load_boston
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.model_selection import cross_val_score
+import numpy as np
 
 boston = load_boston()
 X, y = boston.data, boston.target
@@ -68,15 +69,11 @@ With these two pieces, we are now ready for sequential model-based optimisation.
 from skopt import gp_minimize
 res_gp = gp_minimize(objective, space, n_calls=100, random_state=0)
 
-"Best score=%.4f" % res_gp.fun
+print('Best score: {:.4f}'.format(res_gp.fun))
+
 ```
 
-
-
-
     'Best score=2.7903'
-
-
 
 
 ```python
