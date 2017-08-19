@@ -104,7 +104,7 @@ print("""Best parameters:
 ```python
 from skopt.plots import plot_convergence
 
-plot_convergence(res_gp);
+plot_convergence(res_gp)
 ```
 
 
